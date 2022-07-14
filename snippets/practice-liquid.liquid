@@ -1,0 +1,43 @@
+
+
+{%- assign array = '1, 2, 3, 4, 5' -%}
+{%- assign array = array | split: ',' | uniq -%}
+
+{%- for a in array -%}
+	<span>{{a}}</span>
+{%- else -%}
+	<span>All Products not here</span>
+{%- endfor -%}
+
+
+{%- assign a = 10 -%}
+{%- assign b = 20 -%}
+{%- assign c = 10 -%}
+
+{%- if a == b -%}
+   OK
+  {%- elsif a != c -%}
+   YES
+  {%- elsif b >= c -%}
+   b is big
+{%- endif -%}
+
+<br>
+
+{%- unless a == b -%}
+  Unless
+{%- endunless -%}
+
+<br>
+
+{%- for a in (1..5) -%}
+  {%- if a == 7 -%}
+   {%- break -%}
+  {%- else -%}
+    {{a}}
+  {%- endif -%}  
+{%- endfor -%}
+
+
+
+

@@ -1,0 +1,58 @@
+{%- assign product-name = "Nike Shoes Fitness" -%}
+{%- assign product-name = "true" -%}
+
+{%- if product-name == "true" -%}
+    {{ product-name | handle }}
+    <br>
+	{{ product-name | handleling }}
+	<br>
+	{{ product-name }}
+{%- endif -%}
+
+<p style="color:red">array</p>
+
+{%- assign array = 'Rohit, Saniket, Omi, Sagar' -%}
+{%- assign array = array | split: ',' | uniq -%}
+
+{%- for a in array -%}
+   <ul>
+     <li>{{a | upcase}}</li>
+   </ul>  
+{%- endfor -%}
+
+<p style="color:red">Reversed</p>
+
+{%- for a in array reversed -%}
+   <ul>
+     <li>{{a}}</li>
+   </ul>  
+{%- endfor -%}
+
+<p style="color:red">Range</p>
+  
+{%- for a in (1..10) -%}
+   {{a}}
+{%- endfor -%}
+
+    <div>
+    {%- assign lower_limit = 2 -%}
+    {%- assign upper_limit = 4 -%}
+
+    {% for i in (lower_limit..upper_limit) -%}
+      {{ i }}
+    {%- endfor %}
+    </div>
+
+<p style="color:red">Cycle</p>
+{% for i in (1..5) -%}
+  {% cycle 'one', 'two', 'three' %}
+{%- endfor %}
+
+<br>
+
+{%- assign path = "" -%}
+{%- assign path2 = "007" -%}
+
+
+{{path | append: path2}}
+
